@@ -1,4 +1,4 @@
-const { v4: uuidv4 } = require('uuid');
+const { v4: uuidv4 } = require("uuid");
 const express = require("express");
 const app = express();
 
@@ -12,8 +12,8 @@ app.listen(PORT, () => {
 
 /* ---------------- Define data model ---------------- */
 let users = [
-  {
-    id: uuidv4(),
+	{
+		id: uuidv4(),
 		firstName: "Peter",
 		lastName: "Parker",
 		dateOfBirth: "August 10, 2001",
@@ -21,8 +21,8 @@ let users = [
 			"https://coolhdwall.com/storage1/202107/peter-parker-spider-man-far-from-home-tom-holland-4k-phone-wallpaper-2160x3840.jpg",
 		bio: "Your friendly neighbourhood Spiderman. With great power comes great responsibility.",
 	},
-  {
-    id: uuidv4(),
+	{
+		id: uuidv4(),
 		firstName: "Tony",
 		lastName: "Stark",
 		dateOfBirth: "May 29, 1970",
@@ -30,8 +30,8 @@ let users = [
 			"https://venturecafephiladelphia.org/wp-content/uploads/sites/11/2021/05/dace9a3da47d7d748e13af43f96344a4449c7688_original.jpeg",
 		bio: "There's one thing you can never take away from me: I am Iron Man.",
 	},
-  {
-    id: uuidv4(),
+	{
+		id: uuidv4(),
 		firstName: "Natasha",
 		lastName: "Romanoff",
 		dateOfBirth: "December 3, 1984",
@@ -54,7 +54,7 @@ app.get("/users", (req, res) => {
 /* Add new user */
 app.post("/users", (req, res) => {
 	// Extract the user data from the request body
-  const newUser = {id: uuidv4(), ...req.body};
+	const newUser = { id: uuidv4(), ...req.body };
 
 	// Add the new user to the list of users
 	users.push(newUser);
@@ -76,3 +76,23 @@ app.delete("/users/:id", (req, res) => {
 });
 
 /* Update user */
+app.put("users/:id", (req, res) => {
+	// Get the user ID from the request parameters
+	const userId = req.params.id;
+
+	// Get the updated user data from the request body
+	const updatedUser = req.body;
+
+	// Loop through the list of users and update the matching user with the new data
+	users = users.map((user) => {
+		if (user.id === userId) {
+			// If there is a match, merge the current user data with the updated data and return it
+			return { ...user, ...updatedUser };
+		} else {
+			// If there is no match, return the original user data without any changes
+			return user;
+		}
+	});
+	// Send back the updated user data as a JSON response
+  res.json(updatedUser);
+});
