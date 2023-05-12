@@ -9,3 +9,17 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
+
+/* Define data model */
+
+let users = [{}];
+
+/* Define API endpoints */
+
+// List all users
+
+// Add new user
+
+// Remove user
+
+// Update user
