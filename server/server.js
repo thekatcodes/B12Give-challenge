@@ -15,7 +15,7 @@ let users = [
   {
     id: uuidv4(),
 		firstName: "Peter",
-		lastnName: "Parker",
+		lastName: "Parker",
 		dateOfBirth: "August 10, 2001",
 		profilePicture:
 			"https://coolhdwall.com/storage1/202107/peter-parker-spider-man-far-from-home-tom-holland-4k-phone-wallpaper-2160x3840.jpg",
@@ -24,7 +24,7 @@ let users = [
   {
     id: uuidv4(),
 		firstName: "Tony",
-		lastnName: "Stark",
+		lastName: "Stark",
 		dateOfBirth: "May 29, 1970",
 		profilePicture:
 			"https://venturecafephiladelphia.org/wp-content/uploads/sites/11/2021/05/dace9a3da47d7d748e13af43f96344a4449c7688_original.jpeg",
@@ -33,7 +33,7 @@ let users = [
   {
     id: uuidv4(),
 		firstName: "Natasha",
-		lastnName: "Romanoff",
+		lastName: "Romanoff",
 		dateOfBirth: "December 3, 1984",
 		profilePicture:
 			"https://venturecafephiladelphia.org/wp-content/uploads/sites/11/2021/05/dace9a3da47d7d748e13af43f96344a4449c7688_original.jpeg",
