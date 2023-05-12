@@ -76,7 +76,7 @@ app.delete("/users/:id", (req, res) => {
 });
 
 /* Update user */
-app.put("users/:id", (req, res) => {
+app.put("/users/:id", (req, res) => {
 	// Get the user ID from the request parameters
 	const userId = req.params.id;
 
