@@ -10,7 +10,6 @@ app.listen(PORT, () => {
 });
 
 /* Define data model */
-
 let users = [
 	{
 		firstName: "Peter",
@@ -41,7 +40,9 @@ let users = [
 /* Define API endpoints */
 
 // List all users
-
+app.get('/users', (req, res) => {
+  res.json(users);
+})
 // Add new user
 
 // Remove user
