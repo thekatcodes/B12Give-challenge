@@ -9,7 +9,7 @@ app.listen(PORT, () => {
 	console.log(`Server listening on port ${PORT}`);
 });
 
-/* Define data model */
+/* ---------------- Define data model ---------------- */
 let users = [
 	{
 		firstName: "Peter",
@@ -26,8 +26,8 @@ let users = [
 		profilePicture:
 			"https://venturecafephiladelphia.org/wp-content/uploads/sites/11/2021/05/dace9a3da47d7d748e13af43f96344a4449c7688_original.jpeg",
 		bio: "There's one thing you can never take away from me: I am Iron Man.",
-  },
-  {
+	},
+	{
 		firstName: "Natasha",
 		lastnName: "Romanoff",
 		dateOfBirth: "December 3, 1984",
@@ -37,14 +37,28 @@ let users = [
 	},
 ];
 
-/* Define API endpoints */
+/* ---------------- Define API endpoints ---------------- */
 
-// List all users
-app.get('/users', (req, res) => {
-  res.json(users);
-})
-// Add new user
+/* Parse incoming JSON data */
+app.use(express.json());
 
-// Remove user
+/* List all users */
+app.get("/users", (req, res) => {
+	res.json(users);
+});
 
-// Update user
+/* Add new user */
+app.post("/users", (req, res) => {
+	// Extract the user data from the request body
+	const newUser = req.body;
+
+	// Add the new user to the list of users
+	users.push(newUser);
+
+	// Send a response to the client indicating that the new user was created successfully
+	res.status(201).json(newUser);
+});
+
+/* Remove user */
+
+/* Update user */
