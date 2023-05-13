@@ -1,3 +1,6 @@
+// Import required modules
+import { v4 as uuidv4 } from 'https://cdn.skypack.dev/uuid';
+
 /* ---------------- Date of birth dropdown ---------------- */
 
 // Get references to the month, day, and year dropdown menus
@@ -57,17 +60,26 @@ form.addEventListener("submit", (event) => {
     
     // Get form data
     const formData = new FormData(form);
-console.log(formData)
-    // Convert form data into object
+    console.log(formData)
 
-    // CONVERT DOB FORM DATA TO SAME FORMAT AS OTHER USERS *****
+    // Format the date using the form data
+    const month = formData.get('month');
+    const day = formData.get('day');
+    const year = formData.get('year');
 
-    const userData = {};
-    formData.forEach((value, key) => {
-        userData[key] = value;
-    })
+    const dateOfBirth = `${month} ${day}, ${year}`
 
-    console.log(userData)
+    // Assign formatted date to the new user object
+    const newUser = {
+        id: uuidv4(),
+        firstName: formData.get('firstName'),
+        lastName: formData.get('lastName'),
+        dateOfBirth: dateOfBirth,
+        profilePicture: formData.get('profilePicture'),
+        bio: formData.get('bio'),
+}
+
+    console.log(newUser)
 
     // Send POST request to backend server to add new user
 
