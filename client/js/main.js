@@ -1,9 +1,6 @@
 const userList = document.querySelector("main");
 
-console.log('TESTTET')
-
 // GET request to the server to fetch the list of users
-
 fetch("http://localhost:3000/users")
   .then((response) => response.json())
   .then(data => {
@@ -18,4 +15,5 @@ fetch("http://localhost:3000/users")
       userList.appendChild(userCard);
     })
   })
-  .catch(error => console.error(error));
+    .catch(error => console.error(error));
+  
