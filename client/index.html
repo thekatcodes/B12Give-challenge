@@ -18,9 +18,12 @@
     <!-- The modal -->
     <div id="add-user-modal" class="modal">
       <div class="modal-content">
-        <span class="close"><i class="fa-solid fa-xmark"></i></span>
-        <!-- Add user form goes here -->
-        <form>
+        <div class="modal-header">
+          <h3>Create New User</h3>
+          <span class="close"><i class="fa-solid fa-xmark"></i></span>
+          <form>
+        </div>
+        
           <label for="firstName">First Name</label>
           <input type="text" id="firstName" name="firstName" required>
 
@@ -43,8 +46,13 @@
 
           </select>
 
+          <label for="profilePic">Profile Picture Link</label>
+          <input type="text" id="profilePic" name="profilePic" required>
+
+          <label for="bio">Bio</label>
+          <textarea id="bio" name="bio" required></textarea>
         </form>
-        <button>Create User</button>
+        <button type="submit">Create User</button>
       </div>
     </div>
 
