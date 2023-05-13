@@ -43,8 +43,8 @@ let users = [
 		lastName: "Romanoff",
 		dateOfBirth: "December 3, 1984",
 		profilePicture:
-			"https://venturecafephiladelphia.org/wp-content/uploads/sites/11/2021/05/dace9a3da47d7d748e13af43f96344a4449c7688_original.jpeg",
-		bio: "There's one thing you can never take away from me: I am Iron Man.",
+			"https://assets-prd.ignimgs.com/2021/03/23/black-widow-button-1616528351974.jpg",
+		bio: "I'm still trying to be better. Even if there's a small chance, we owe it to everyone who's not in this room. To try. Whatever it takes.",
 	},
 ];
 
