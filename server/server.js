@@ -1,6 +1,13 @@
-const { v4: uuidv4 } = require("uuid");
+// Import required modules
 const express = require("express");
+const cors = require("cors");
+const { v4: uuidv4 } = require("uuid");
+
+// Create an instance of the express app
 const app = express();
+
+// Use CORS middleware
+app.use(cors());
 
 // Set the port number to use, either from an environment variable or default to 3000
 const PORT = process.env.PORT || 3000;
