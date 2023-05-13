@@ -25,10 +25,10 @@ const currentYear = new Date().getFullYear();
 const years = Array.from({ length: 50 }, (_, index) => currentYear - index);
 
 // Populate the options for the month dropdown
-months.forEach((month, index) => {
+months.forEach((month) => {
 	const option = document.createElement("option");
 	option.text = month;
-	option.value = index + 1;
+	option.value = month;
 	monthDropdown.add(option);
 });
 
@@ -57,14 +57,19 @@ form.addEventListener("submit", (event) => {
     
     // Get form data
     const formData = new FormData(form);
-
+console.log(formData)
     // Convert form data into object
+
+    // CONVERT DOB FORM DATA TO SAME FORMAT AS OTHER USERS *****
+
     const userData = {};
     formData.forEach((value, key) => {
         userData[key] = value;
     })
 
+    console.log(userData)
+
     // Send POST request to backend server to add new user
-    
+
 
 });
