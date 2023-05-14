@@ -32,7 +32,14 @@ fetch(`http://localhost:3000/users/${userId}`)
 
 		const updateButton = document.querySelector(".fa-pen-to-square");
 
-		updateButton.addEventListener("click", () => {
+    updateButton.addEventListener("click", () => {
+      // Create new select elements for dropdowns
+      const monthDropdown = document.createElement("select");
+      const dayDropdown = document.createElement("select");
+      const yearDropdown = document.createElement("select");
+  
+      // Call dobDropdown function to populate the month, day, and year dropdowns
+      dobDropdown(monthDropdown, dayDropdown, yearDropdown);  
 
 			const profileUpdate = document.querySelector(".profile-detail");
 			profileUpdate.innerHTML = `
