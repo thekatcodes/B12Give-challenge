@@ -55,7 +55,23 @@ app.use(express.json());
 
 /* List all users */
 app.get("/users", (req, res) => {
+    // Send the users data as a JSON response
 	res.json(users);
+});
+
+/* List the user where id parameter matches data id */
+app.get("/users/:id", (req, res) => {
+	// Get the value of "id" from the request parameters
+	const { id } = req.params;
+
+	// Check if "id" exists
+	if (id) {
+		// Find the user with the matching id in the users array
+		const user = users.find((user) => user.id === id);
+
+		// Send the user object as a JSON response
+		res.json(user);
+	}
 });
 
 /* Add new user */
@@ -101,5 +117,5 @@ app.put("/users/:id", (req, res) => {
 		}
 	});
 	// Send back the updated user data as a JSON response
-  res.json(updatedUser);
+	res.json(updatedUser);
 });
