@@ -1,6 +1,6 @@
 // Import required modules
 import { v4 as uuidv4 } from "https://cdn.skypack.dev/uuid";
-import { renderUsers } from './main.js';
+import { renderUsers } from './index.js';
 import { dobDropdown } from "./helper.js";
 
 /* ---------------- Date of birth dropdown ---------------- */
