@@ -1,4 +1,4 @@
-import { dobDropdown, years } from "./helper.js";
+import { dobDropdown, years, months} from "./helper.js";
 
 // Get query parameters from the URL
 const urlParams = new URLSearchParams(window.location.search);
@@ -66,7 +66,12 @@ fetch(`http://localhost:3000/users/${userId}`)
 
 			// Set the selected index of the dropdowns based on the extracted values
 			yearDropdown.selectedIndex = years.indexOf(parseInt(year));
-			monthDropdown.selectedIndex = parseInt(month) - 1;
+      // monthDropdown.selectedIndex = parseInt(month) - 1;
+      const monthIndex = months.findIndex((monthArr) => monthArr === month);
+      if (monthIndex !== -1) {
+        monthDropdown.selectedIndex = monthIndex;
+      }
+
 			dayDropdown.selectedIndex = parseInt(day) - 1;
 		});
 	})
