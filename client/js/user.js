@@ -31,3 +31,19 @@ fetch(`http://localhost:3000/users/${userId}`)
 		userProfile.appendChild(profileDetail);
 	})
 	.catch((error) => console.error(error));
+
+
+/* ---------------- Click events ---------------- */
+
+
+// Select icons
+const backButton = document.querySelector(".fa-arrow-left");
+const editButton = document.querySelector(".fa-pen-to-square");
+const deleteButton = document.querySelector(".fa-trash-can");
+
+// Attach event listeners to the icons
+backButton.addEventListener("click", () => {
+// Redirect to index.html
+window.location.href = `index.html`;
+
+});
