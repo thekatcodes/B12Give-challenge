@@ -1,17 +1,16 @@
 import { dobDropdown, years, months } from "./helper.js";
 
 export function updateUser(user) {
-  
-  const profileUpdate = document.querySelector(".profile-detail");
+	const profileUpdate = document.querySelector(".profile-detail");
 	profileUpdate.innerHTML = `
   <div> 
   <img src="${user.profilePicture}" alt="Profile Picture">
-  <input type="text" value="${user.profilePicture}">
-  <h2><input type="text" value="${user.firstName}"> <input type="text" value="${user.lastName}"></h2>
+  <input type="text" name="profilePicture" value="${user.profilePicture}">
+  <h2><input type="text" name="firstName" value="${user.firstName}"> <input type="text" name="lastName" value="${user.lastName}"></h2>
   <p class="dob">Date of Birth</p>
   <p>Bio</p>
-  <h3><textarea>${user.bio}</textarea></h3>
-  <button>Save</button>
+  <h3><textarea name="bio">${user.bio}</textarea></h3>
+  <button class="save-button">Save</button>
   <button>Cancel</button>
   </div>
   `;
@@ -39,9 +38,42 @@ export function updateUser(user) {
 		monthDropdown.selectedIndex = monthIndex;
 	}
 	dayDropdown.selectedIndex = parseInt(day) - 1;
+	// Save click event to send new data back to server + close input fields and display new profile data
+
+	const saveButton = document.querySelector(".save-button");
+  saveButton.addEventListener("click", () => {
+    console.log('Click')
+		const profileUpdate = document.querySelector(".profile-detail");
+		const userId = user.id;
+
+		// Get the updated values from the input fields
+		const profilePicture = profileUpdate.querySelector(
+			"input[name='profilePicture']"
+		).value;
+		const firstName = profileUpdate.querySelector(
+			"input[name='firstName']"
+		).value;
+		const lastName = profileUpdate.querySelector(
+			"input[name='lastName']"
+		).value;
+		const bio = profileUpdate.querySelector("textarea").value;
+		const dob = `${monthDropdown.value} ${dayDropdown.value}, ${yearDropdown.value}`;
+
+
+    console.log('dob data',dob)
+
+		// Construct the updated user object
+		const updatedUser = {
+			id: userId,
+			profilePicture: profilePicture,
+			firstName: firstName,
+			lastName: lastName,
+			bio: bio,
+			dateOfBirth: dob,
+		};
+    console.log('updated user',updatedUser)
+  });
+  
 }
 
-
-// Save click event to send new data back to server + close input fields and display new profile data
-
-// Cancel on click reverts to profile 
+// Cancel on click reverts to profile
