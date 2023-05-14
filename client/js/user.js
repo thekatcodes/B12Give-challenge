@@ -1,4 +1,4 @@
-import { dobDropdown } from "./helper.js";
+import { dobDropdown, years } from "./helper.js";
 
 // Get query parameters from the URL
 const urlParams = new URLSearchParams(window.location.search);
@@ -55,6 +55,19 @@ fetch(`http://localhost:3000/users/${userId}`)
       <button>Save</button>
       </div>
       `;
+
+			// Add the month, day, and year dropdowns to the .dob element
+			document
+				.querySelector(".dob")
+				.append(monthDropdown, dayDropdown, yearDropdown);
+
+			// Extract the month, day, and year values from the user's dateOfBirth string using the split() method
+			const [month, day, year] = user.dateOfBirth.split(/[\s,]+/);
+
+			// Set the selected index of the dropdowns based on the extracted values
+			yearDropdown.selectedIndex = years.indexOf(parseInt(year));
+			monthDropdown.selectedIndex = parseInt(month) - 1;
+			dayDropdown.selectedIndex = parseInt(day) - 1;
 		});
 	})
 	.catch((error) => console.error(error));
