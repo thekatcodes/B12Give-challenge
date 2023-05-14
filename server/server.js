@@ -30,12 +30,12 @@ let users = [
 	},
 	{
 		id: uuidv4(),
-		firstName: "Tony",
-		lastName: "Stark",
-		dateOfBirth: "May 29, 1970",
+		firstName: "Shang-Chi",
+		lastName: "Xu",
+		dateOfBirth: "May 29, 1999",
 		profilePicture:
-			"https://venturecafephiladelphia.org/wp-content/uploads/sites/11/2021/05/dace9a3da47d7d748e13af43f96344a4449c7688_original.jpeg",
-		bio: "There's one thing you can never take away from me: I am Iron Man.",
+			"https://www.denofgeek.com/wp-content/uploads/2021/04/Shang-Chi-4.jpeg",
+		bio: "My father trained me to be an assasin. All I ever wanted was a normal life.",
 	},
 	{
 		id: uuidv4(),
