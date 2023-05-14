@@ -44,4 +44,4 @@ function dobDropdown(monthDropdown, dayDropdown, yearDropdown) {
     });
 };
 
-export { dobDropdown, years };
+export { dobDropdown, years, months };
