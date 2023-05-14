@@ -20,7 +20,12 @@ fetch(`http://localhost:3000/users/${userId}`)
         const profileDetail = document.createElement('div');
         profileDetail.innerHTML = `
         <div>
-        <h1>${user.firstName}</h1>
+        <img src="${user.profilePicture}" alt="Profile Picture">
+        <h2>${user.firstName} ${user.lastName}</h2>
+        <p>Date of Birth</p>
+        <h3>${user.dateOfBirth} </h3>
+        <p>Bio</p>
+        <h3>${user.bio} </h3>
         </div>
         `
         userProfile.appendChild(profileDetail);
