@@ -66,12 +66,10 @@ fetch(`http://localhost:3000/users/${userId}`)
 
 			// Set the selected index of the dropdowns based on the extracted values
 			yearDropdown.selectedIndex = years.indexOf(parseInt(year));
-      // monthDropdown.selectedIndex = parseInt(month) - 1;
       const monthIndex = months.findIndex((monthArr) => monthArr === month);
       if (monthIndex !== -1) {
         monthDropdown.selectedIndex = monthIndex;
       }
-
 			dayDropdown.selectedIndex = parseInt(day) - 1;
 		});
 	})
@@ -89,25 +87,6 @@ backButton.addEventListener("click", () => {
 	window.location.href = `index.html`;
 });
 
-// const editButton = document.querySelector(".fa-pen-to-square");
-
-// editButton.addEventListener("click", () => {
-
-//   const profileEdit = document.querySelector(".profile-detail");
-//   profileEdit.innerHTML = `
-//   <div>
-//   <img src="${user.profilePicture}" alt="Profile Picture">
-//   <input type="text" value="${user.profilePicture}">
-//   <h2><input type="text" value="${user.firstName}"> <input type="text" value="${user.lastName}"></h2>
-//   <p>Date of Birth</p>
-//   <h3><input type="date" value="${user.dateOfBirth}"></h3>
-//   <p>Bio</p>
-//   <h3><textarea>${user.bio}</textarea></h3>
-//   <button>Save</button>
-//   </div>
-//   `
-
-// });
 
 deleteButton.addEventListener("click", () => {
 	// Add code to handle the click event for the delete button
