@@ -1,4 +1,5 @@
-import { updateUser} from "./updateUser.js";
+// Import required modules
+import { updateUser } from "./updateUser.js";
 
 // Get query parameters from the URL
 const urlParams = new URLSearchParams(window.location.search);
@@ -21,21 +22,21 @@ fetch(`http://localhost:3000/users/${userId}`)
 
 		const profileDetail = document.createElement("div");
 		profileDetail.innerHTML = `
-        <div>
-        <img src="${user.profilePicture}" alt="Profile Picture">
-        <h2>${user.firstName} ${user.lastName}</h2>
-        <p>Date of Birth</p>
-        <h3>${user.dateOfBirth} </h3>
-        <p>Bio</p>
-        <h3>${user.bio} </h3>
-        </div>
-        `;
+            <div>
+            <img src="${user.profilePicture}" alt="Profile Picture">
+            <h2>${user.firstName} ${user.lastName}</h2>
+            <p>Date of Birth</p>
+            <h3>${user.dateOfBirth} </h3>
+            <p>Bio</p>
+            <h3>${user.bio} </h3>
+            </div>
+            `;
 		userProfile.appendChild(profileDetail);
 
 		const updateButton = document.querySelector(".fa-pen-to-square");
 
 		updateButton.addEventListener("click", () => {
-            updateUser(user);
+			updateUser(user);
 		});
 	})
 	.catch((error) => console.error(error));
@@ -51,7 +52,6 @@ backButton.addEventListener("click", () => {
 	// Redirect to index.html
 	window.location.href = `index.html`;
 });
-
 
 deleteButton.addEventListener("click", () => {
 	// Add code to handle the click event for the delete button
