@@ -50,7 +50,6 @@
 .form-name-container{
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
 }
 
 .first-name-wrapper, .last-name-wrapper,  .form-dob-container, .form-picture-container, .form-bio-container {
