@@ -46,6 +46,8 @@ export function updateUser(user) {
 
 	dayDropdown.selectedIndex = parseInt(day) - 1;
 
+	/*  -------- Save button click event  -------- */
+
 	// Click event for save button to send new data back to server + close input fields and display new profile data
 	const saveButton = document.querySelector(".save-button");
 	saveButton.addEventListener("click", () => {
@@ -98,5 +100,13 @@ export function updateUser(user) {
 				}
 			})
 			.catch((error) => console.error(error));
+	});
+
+	/*  -------- Cancel button click event -------- */
+	const cancelButton = document.querySelector(".cancel-edit-button");
+
+	cancelButton.addEventListener("click", () => {
+		// Reload the page to cancel editing
+		location.reload();
 	});
 }
