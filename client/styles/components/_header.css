@@ -8,8 +8,8 @@ header {
 h1 {
     color: var(--main-color);
     text-decoration: underline;
-    text-decoration-color: var(--main-color);;
-    /* margin: 0; */
+    text-decoration-color: var(--main-color);
+    ;
 }
 
 .add-user-button {
@@ -22,17 +22,23 @@ h1 {
     padding: .5rem 1rem;
 }
 
+.add-user-button:hover {
+    cursor: pointer;
+background-color: var(--color-white);
+color: var(--main-color);
+border: var(--main-color) solid 1px;
+transition: 150ms ease-in-out;
+}
 
 
-/*  for desktop */
-/* .add-user-button {
-    width: 120px;
-    border-radius: 1rem;
-    border: none;
-    background-color: var(--main-color);
-    color: #fff;
-    font-size: 1rem;
-    padding: .5rem 1rem;
-    position: absolute;
-    right: 0;
-} */
+
+/* Tablet & Desktop */
+
+@media screen and (min-width: 768px) {
+    .add-user-button {
+        position: absolute;
+        right: 0;
+        margin-right: 50px;
+    }
+
+}
