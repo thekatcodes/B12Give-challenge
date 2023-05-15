@@ -43,7 +43,7 @@ fetch(`http://localhost:3000/users/${userId}`)
 	})
 	.catch((error) => console.error(error));
 
-/* ---------------- Click events ---------------- */
+/* ---------------- Back and Delete click events ---------------- */
 
 // Select icons
 const backButton = document.querySelector(".fa-arrow-left");
@@ -56,7 +56,7 @@ backButton.addEventListener("click", () => {
 });
 
 deleteButton.addEventListener("click", () => {
-	// Add code to handle the click event for the delete button
+	// Future implementation: Confirmation modal with option to go forward with deleting or cancel
 
  	// Send delete request to server with user data
    fetch(`http://localhost:3000/users/${userId}`, {
