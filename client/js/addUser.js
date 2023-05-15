@@ -56,8 +56,9 @@ form.addEventListener("submit", (event) => {
       console.log(response)
       if (response.ok) {
       // close modal
-      // update ui to show new user
-        renderUsers();
+        
+      // Reload page to show new user
+        location.reload();
     }
   })
 });
