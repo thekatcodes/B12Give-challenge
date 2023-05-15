@@ -1,6 +1,6 @@
 /* ---------------- Display all users cards ---------------- */
 
-const userList = document.querySelector("main");
+const userList = document.querySelector(".cards-container");
 
 // GET request to the server to fetch the list of users
 export function renderUsers() {
