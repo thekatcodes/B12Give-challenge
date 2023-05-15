@@ -16,36 +16,45 @@
     <button class="add-user-button">+ Add User</button>
   </header>
   <main>
-    <!-- The modal -->
+    <!-- Modal -->
     <div id="add-user-modal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
           <h3 class="modal-header-title">Create New User</h3>
           <span class="close"><i class="fa-solid fa-xmark"></i></span>
         </div>
+
         <form>
+          <div class="form-name-container">
+            <span class="first-name-wrapper">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" required>
+            </span>
+            <span class="last-name-wrapper">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required>
+            </span>
+          </div>
 
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" required>
+          <div class="form-dob-container">
+            <span class="dob-wrapper">
+              <label for="dateOfBirth">Date of Birth</label>
+            </span>
 
-          <label for="lastName">Last Name</label>
-          <input type="text" id="lastName" name="lastName" required>
+            <span class="dropdown-wrapper">
+              <select id="month" name="month" required>
+                <option value="" disabled selected hidden>Month</option>
+              </select>
 
-          <label for="dateOfBirth">Date of Birth</label>
-          <select id="month" name="month" required>
-            <option value="" disabled selected hidden>Month</option>
+              <select id="day" name="day" required>
+                <option value="" disabled selected hidden>Day</option>
+              </select>
 
-          </select>
-
-          <select id="day" name="day" required>
-            <option value="" disabled selected hidden>Day</option>
-
-          </select>
-
-          <select id="year" name="year" required>
-            <option value="" disabled selected hidden>Year</option>
-
-          </select>
+              <select id="year" name="year" required>
+                <option value="" disabled selected hidden>Year</option>
+              </select>
+            </span>
+          </div>
 
           <label for="profilePic">Profile Picture Link</label>
           <input type="text" id="profilePicture" name="profilePicture" required>
@@ -55,12 +64,15 @@
 
           <button type="submit">Create User</button>
         </form>
+
       </div>
     </div>
-      <div class="overlay"></div>
-    <section class="cards-section" >
-        <div class="cards-container"></div>
 
+    <div class="overlay"></div>
+
+    <!-- Cards section -->
+    <section class="cards-section">
+      <div class="cards-container"></div>
     </section>
 
   </main>
