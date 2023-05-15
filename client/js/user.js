@@ -56,8 +56,6 @@ backButton.addEventListener("click", () => {
 });
 
 deleteButton.addEventListener("click", () => {
-	// Future implementation: Confirmation modal with option to go forward with deleting or cancel
-
  	// Send delete request to server with user data
    fetch(`http://localhost:3000/users/${userId}`, {
     method: "DELETE",
@@ -69,11 +67,10 @@ deleteButton.addEventListener("click", () => {
     .then((response) => {
       console.log(response);
       if (response.ok) {
+        // Redirect to index.html
         window.location.href = `index.html`;
-
         console.log("deleted user, now back to home page");
       }
     })
     .catch((error) => console.error(error));
-
 });
