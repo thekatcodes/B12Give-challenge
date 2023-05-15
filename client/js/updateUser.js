@@ -7,18 +7,21 @@ export function updateUser(user) {
 
 	// Insert HTML code to display user profile information, including inputs for updating values
 	profileUpdate.innerHTML = `
-  <div> 
-  <img src="${user.profilePicture}" alt="Profile Picture">
-  <input type="text" name="profilePicture" value="${user.profilePicture}">
-  <h2><input type="text" name="firstName" value="${user.firstName}"> <input type="text" name="lastName" value="${user.lastName}"></h2>
-  <p class="dob">Date of Birth</p>
-  <p>Bio</p>
-  <h3><textarea name="bio">${user.bio}</textarea></h3>
-  <button class="save-button">Save</button>
-  <button class="cancel-edit-button">Cancel</button>
+  <div class="profile-detail-container"> 
+    <img src="${user.profilePicture}" alt="Profile Picture" class="profile-image">
+    <input type="text" name="profilePicture" value="${user.profilePicture}">
+    <h2 class="name-wrapper"><input type="text" name="firstName" value="${user.firstName}"> <input type="text" name="lastName" value="${user.lastName}"></h2>
+    <div class="dob-wrapper">
+      <p class="dob dob-label">Date of Birth</p>
+    </div>
+    <p class="profile-bio-label">Bio</p>
+    <h3 class="user-dob"><textarea class="edit-bio" name="bio">${user.bio}</textarea></h3>
+    <div class="edit-button">
+      <button class="save-button">Save</button>
+      <button class="cancel-edit-button">Cancel</button>
+    </div>
   </div>
   `;
-
 	// Create new select elements for dropdowns
 	const monthDropdown = document.createElement("select");
 	const dayDropdown = document.createElement("select");
@@ -29,7 +32,7 @@ export function updateUser(user) {
 
 	// Add the month, day, and year dropdowns to the .dob element
 	document
-		.querySelector(".dob")
+		.querySelector(".dob-wrapper")
 		.append(monthDropdown, dayDropdown, yearDropdown);
 
 	// Extract the month, day, and year values from the user's dateOfBirth string using the split() method

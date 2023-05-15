@@ -27,11 +27,11 @@ fetch(`http://localhost:3000/users/${userId}`)
 
 		profileDetail.innerHTML = `
             <img src="${user.profilePicture}" alt="Profile Picture" class="profile-image">
-            <h2>${user.firstName} ${user.lastName}</h2>
-            <p>Date of Birth</p>
-            <h3>${user.dateOfBirth} </h3>
-            <p>Bio</p>
-            <h3>" ${user.bio} "</h3>
+            <h2 class="profile-name">${user.firstName} ${user.lastName}</h2>
+            <p class="dob-label">Date of Birth</p>
+            <h3 class="user-dob">${user.dateOfBirth} </h3>
+            <p class="profile-bio-label">Bio</p>
+            <h3 class="profile-bio-text">" ${user.bio} "</h3>
             `;
 		userProfile.appendChild(profileDetail);
 
