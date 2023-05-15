@@ -9,8 +9,6 @@
   transition: 0.5s ease-out;
   overflow: visible;
   margin: 25px 25px;
-
-
 }
 
 .card-details {
@@ -52,7 +50,6 @@
   transition: 0.3s ease-out;
 }
 
-/*Hover*/
 .card:hover {
   border-color: var(--main-color);
   box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
@@ -61,4 +58,21 @@
 .card:hover .card-button {
   transform: translate(-50%, 50%);
   opacity: 1;
+  cursor: pointer;
+}
+
+
+/* Tablet & Desktop */
+
+@media screen and (min-width: 768px) {
+  .cards-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px
+  }
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
 }
