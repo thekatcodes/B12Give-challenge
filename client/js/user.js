@@ -22,16 +22,16 @@ fetch(`http://localhost:3000/users/${userId}`)
     userData = user;
 		const userProfile = document.querySelector("main");
 
-		const profileDetail = document.createElement("div");
+    const profileDetail = document.createElement("div");
+    profileDetail.classList.add("profile-detail-container");
+
 		profileDetail.innerHTML = `
-            <div>
-            <img src="${user.profilePicture}" alt="Profile Picture">
+            <img src="${user.profilePicture}" alt="Profile Picture" class="profile-image">
             <h2>${user.firstName} ${user.lastName}</h2>
             <p>Date of Birth</p>
             <h3>${user.dateOfBirth} </h3>
             <p>Bio</p>
-            <h3>${user.bio} </h3>
-            </div>
+            <h3>" ${user.bio} "</h3>
             `;
 		userProfile.appendChild(profileDetail);
 
