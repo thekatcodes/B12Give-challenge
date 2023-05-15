@@ -9,21 +9,24 @@ export function renderUsers() {
 		.then((response) => response.json())
 		.then((data) => {
 			data.map((user) => {
-				const userCard = document.createElement("div");
+        const userCard = document.createElement("div");
+        userCard.classList.add("card");
 				console.log("user", user);
 
 				// Set the `innerHTML` of the user card element to a string containing the user data
 				userCard.innerHTML = `
-            <div class="card" id="${user.id}">
-              <img src="${user.profilePicture}" alt="Profile Picture">
-              <h2>${user.firstName} ${user.lastName}</h2>
-              <button class="view-profile">View Profile</button>
+            <div class="card-details" id="${user.id}">
+              <img src="${user.profilePicture}" alt="Profile Picture" class="card-image">
+              <h2 class="card-title">${user.firstName} ${user.lastName}</h2>
+              <div>
+              <button class="card-button">View Profile</button>
+              </div>
             </div>
           `;
 				userList.appendChild(userCard);
 
 				// Select "View Profile" buttons
-				const viewProfileButton = userCard.querySelector(".view-profile");
+				const viewProfileButton = userCard.querySelector(".card-button");
 
 				// Attach event listener to each button
 				viewProfileButton.addEventListener("click", () => {
