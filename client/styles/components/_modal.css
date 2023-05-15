@@ -24,12 +24,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .modal-header-title {
   margin-top: 0px;
 }
+
+.form-name-container{
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+}
+
+.first-name-wrapper, .last-name-wrapper,  .form-dob-container {
+display: flex;
+flex-direction: column;
+}
+
 
 
 
