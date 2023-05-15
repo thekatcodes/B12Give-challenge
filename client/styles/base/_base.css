@@ -1,5 +1,14 @@
-
+:root {
+    --main-color: #213C87;
+}
 
 body {
     font-family: 'Oswald', sans-serif;
+}
+
+main {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
