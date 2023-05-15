@@ -39,9 +39,12 @@
 .first-name-wrapper, .last-name-wrapper,  .form-dob-container, .form-picture-container, .form-bio-container {
 display: flex;
 flex-direction: column;
+margin-bottom: 15px;
 }
 
-
+.last-name-wrapper {
+  margin-left: 10px; 
+}
 
 
 .modal-content {
