@@ -15,7 +15,7 @@ export function updateUser(user) {
       <p class="dob dob-label">Date of Birth</p>
     </div>
     <p class="profile-bio-label">Bio</p>
-    <h3 class="user-dob"><textarea class="edit-bio" name="bio">${user.bio}</textarea></h3>
+    <h3><textarea class="edit-bio" name="bio">${user.bio}</textarea></h3>
     <div class="edit-button">
       <button class="save-button">Save</button>
       <button class="cancel-edit-button">Cancel</button>
