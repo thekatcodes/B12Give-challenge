@@ -1,6 +1,7 @@
 @import url('./base/_base.css');
 
 /* Components Styles */
+@import url('./components/_buttons.css');
 @import url('./components/_cards.css');
 @import url('./components/_header.css');
 
