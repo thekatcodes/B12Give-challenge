@@ -1,6 +1,5 @@
 // Import required modules
 import { v4 as uuidv4 } from "https://cdn.skypack.dev/uuid";
-import { renderUsers } from './index.js';
 import { dobDropdown } from "./helper.js";
 
 /* ---------------- Date of birth dropdown ---------------- */
@@ -44,7 +43,6 @@ form.addEventListener("submit", (event) => {
 	console.log(newUser);
 
 	// Send POST request to backend server to add new user
-
   fetch('http://localhost:3000/users', {
     method: 'POST',
     headers: {
