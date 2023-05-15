@@ -20,7 +20,7 @@
   color: var(--main-color);
 }
 
-.modal-header {
+.modal-header, .form-submit {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,7 @@
   /* justify-content: space-around; */
 }
 
-.first-name-wrapper, .last-name-wrapper,  .form-dob-container {
+.first-name-wrapper, .last-name-wrapper,  .form-dob-container, .form-picture-container, .form-bio-container {
 display: flex;
 flex-direction: column;
 }
