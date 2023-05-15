@@ -1,0 +1,29 @@
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.fa-arrow-left, .profile-buttons  {
+    font-size: 1.5rem;
+}
+
+.fa-arrow-left {
+    position: absolute;
+    left: 0;
+    color: var(--main-color);
+    margin: 0 10px
+}
+
+.profile-buttons {
+    position: absolute;
+    right: 0;
+}
+
+.fa-pen-to-square {
+    color: var(--color-yellow);
+}
+
+.fa-trash-can {
+    color: var(--color-red);
+    margin: 0 10px
+}
