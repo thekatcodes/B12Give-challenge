@@ -1,7 +1,11 @@
+// Import required modules
 import { dobDropdown, years, months } from "./helper.js";
 
+// Define and export function to update user profile
 export function updateUser(user) {
 	const profileUpdate = document.querySelector(".profile-detail");
+
+	// Insert HTML code to display user profile information, including inputs for updating values
 	profileUpdate.innerHTML = `
   <div> 
   <img src="${user.profilePicture}" alt="Profile Picture">
@@ -11,7 +15,7 @@ export function updateUser(user) {
   <p>Bio</p>
   <h3><textarea name="bio">${user.bio}</textarea></h3>
   <button class="save-button">Save</button>
-  <button>Cancel</button>
+  <button class="cancel-edit-button">Cancel</button>
   </div>
   `;
 
@@ -33,16 +37,19 @@ export function updateUser(user) {
 
 	// Set the selected index of the dropdowns based on the extracted values
 	yearDropdown.selectedIndex = years.indexOf(parseInt(year));
+
+	// Find index of the month in the months array using the findIndex() method and set the selected index of the month dropdown
 	const monthIndex = months.findIndex((monthArr) => monthArr === month);
 	if (monthIndex !== -1) {
 		monthDropdown.selectedIndex = monthIndex;
 	}
-	dayDropdown.selectedIndex = parseInt(day) - 1;
-	// Save click event to send new data back to server + close input fields and display new profile data
 
+	dayDropdown.selectedIndex = parseInt(day) - 1;
+
+	// Click event for save button to send new data back to server + close input fields and display new profile data
 	const saveButton = document.querySelector(".save-button");
-  saveButton.addEventListener("click", () => {
-    console.log('Click')
+	saveButton.addEventListener("click", () => {
+		console.log("Click");
 		const profileUpdate = document.querySelector(".profile-detail");
 		const userId = user.id;
 
@@ -59,8 +66,7 @@ export function updateUser(user) {
 		const bio = profileUpdate.querySelector("textarea").value;
 		const dob = `${monthDropdown.value} ${dayDropdown.value}, ${yearDropdown.value}`;
 
-
-    console.log('dob data',dob)
+		console.log("dob data", dob);
 
 		// Construct the updated user object
 		const updatedUser = {
@@ -71,9 +77,26 @@ export function updateUser(user) {
 			bio: bio,
 			dateOfBirth: dob,
 		};
-    console.log('updated user',updatedUser)
-  });
-  
-}
+		console.log("updated user", updatedUser);
 
-// Cancel on click reverts to profile
+		// Send PUT request to server with updated user data
+		fetch(`http://localhost:3000/users/${userId}`, {
+			method: "PUT",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(updatedUser),
+		})
+			.then((response) => {
+				console.log(response);
+				if (response.ok) {
+					// Update the user object with the new data
+					user = updatedUser;
+					// Reload the page to show updated data
+					location.reload();
+					console.log("Refreshed with new data!");
+				}
+			})
+			.catch((error) => console.error(error));
+	});
+}
