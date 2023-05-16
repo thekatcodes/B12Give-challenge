@@ -53,8 +53,6 @@ form.addEventListener("submit", (event) => {
     .then(response => {
       console.log(response)
       if (response.ok) {
-      // close modal
-        
       // Reload page to show new user
         location.reload();
     }
