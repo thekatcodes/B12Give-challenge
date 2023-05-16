@@ -34,7 +34,6 @@ Hero Management is a fully responsive user management app built using a mobile f
 
 ## Dependencies
 
-- Express
 - CORS "^2.8.5"
 - Express "^4.18.2"
 - uuid "^9.0.0"
