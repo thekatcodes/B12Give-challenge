@@ -21,7 +21,6 @@ form.addEventListener("submit", (event) => {
 
 	// Get form data
 	const formData = new FormData(form);
-	console.log(formData);
 
 	// Format the date using the form data
 	const month = formData.get("month");
@@ -40,8 +39,6 @@ form.addEventListener("submit", (event) => {
 		bio: formData.get("bio"),
 	};
 
-	console.log(newUser);
-
 	// Send POST request to backend server to add new user
   fetch('http://localhost:3000/users', {
     method: 'POST',
@@ -51,7 +48,6 @@ form.addEventListener("submit", (event) => {
     body: JSON.stringify(newUser)
   })
     .then(response => {
-      console.log(response)
       if (response.ok) {
       // Reload page to show new user
         location.reload();

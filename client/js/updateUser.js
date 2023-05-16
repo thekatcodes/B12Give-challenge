@@ -54,7 +54,6 @@ export function updateUser(user) {
 	// Click event for save button to send new data back to server + close input fields and display new profile data
 	const saveButton = document.querySelector(".save-button");
 	saveButton.addEventListener("click", () => {
-		console.log("Click");
 		const profileUpdate = document.querySelector(".profile-detail");
 		const userId = user.id;
 
@@ -71,8 +70,6 @@ export function updateUser(user) {
 		const bio = profileUpdate.querySelector("textarea").value;
 		const dob = `${monthDropdown.value} ${dayDropdown.value}, ${yearDropdown.value}`;
 
-		console.log("dob data", dob);
-
 		// Construct the updated user object
 		const updatedUser = {
 			id: userId,
@@ -82,7 +79,6 @@ export function updateUser(user) {
 			bio: bio,
 			dateOfBirth: dob,
 		};
-		console.log("updated user", updatedUser);
 
 		// Send PUT request to server with updated user data
 		fetch(`http://localhost:3000/users/${userId}`, {
@@ -93,13 +89,11 @@ export function updateUser(user) {
 			body: JSON.stringify(updatedUser),
 		})
 			.then((response) => {
-				console.log(response);
 				if (response.ok) {
 					// Update the user object with the new data
 					user = updatedUser;
 					// Reload the page to show updated data
 					location.reload();
-					console.log("Refreshed with new data!");
 				}
 			})
 			.catch((error) => console.error(error));

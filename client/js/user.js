@@ -4,13 +4,8 @@ import { updateUser } from "./updateUser.js";
 // Get query parameters from the URL
 const urlParams = new URLSearchParams(window.location.search);
 
-// Get value of the id parameter
-const userDataString = urlParams.get("id");
-console.log("userDataString:", userDataString);
-
 // Decode thei id parameter and store it in a variable
 const userId = decodeURIComponent(urlParams.get("id"));
-console.log("userId:", userId); // check the value of userId
 
 let userData;
 
@@ -18,7 +13,6 @@ let userData;
 fetch(`http://localhost:3000/users/${userId}`)
 	.then((response) => response.json())
 	.then((user) => {
-		// console.log(user)
     userData = user;
 		const userProfile = document.querySelector("main");
 
@@ -65,11 +59,9 @@ deleteButton.addEventListener("click", () => {
     body: JSON.stringify(userData),
   })
     .then((response) => {
-      console.log(response);
       if (response.ok) {
         // Redirect to index.html
         window.location.href = `index.html`;
-        console.log("deleted user, now back to home page");
       }
     })
     .catch((error) => console.error(error));
