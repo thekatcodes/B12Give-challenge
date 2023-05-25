@@ -30,7 +30,7 @@ Hero Management is a fully responsive user management app built using a mobile f
 1. Clone this repository onto your local device.
 2. Install dependencies using the `npm install` command.
 3. In the server folder, start the web server using the `node server.js` command.
-4. Load index.html file located in the client folder
+4. Load index.html file located in the client folder.
 
 ## Dependencies
 
