@@ -9,7 +9,7 @@ Hero Management is a fully responsive user management app built using a mobile f
 ### All Users List
 ![userlist](https://github.com/thekatcodes/B12Give-challenge/assets/83685887/adb9d593-c820-4577-86d7-ea66c11ac119)
 
-#### Add User
+### Add User
 ![adduser](https://github.com/thekatcodes/B12Give-challenge/assets/83685887/286232b9-dc1b-45d7-bdef-ee0f1e9e9c07)
 
 ### User Profile
